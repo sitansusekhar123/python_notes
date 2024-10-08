@@ -1,4 +1,29 @@
+
+
 # Functions
+
+## Table of Contents
+- [Function Definition](#function-definition)
+- [Built in Functions](#built-in-functions)
+  - [Important Examples](#important-examples)
+- [Other Functions](#other-functions)
+    - [Important Examples](#important-examples-1)
+- [Modules](#modules)
+    - [Import Modules](#import-modules)
+        - [Example: Importing the Math Module](#example-importing-the-math-module)
+- [Math Module](#math-module)
+    - [Important Examples](#important-examples-2)
+- [Random Module](#random-module)
+    - [Important Examples](#important-examples-3)
+- [User Defined Functions](#user-defined-functions)
+    - [Important Examples](#important-examples-4)
+    - [Different Types of Arguments](#different-types-of-arguments)
+        - [Positional Arguments](#positional-arguments)
+        - [Keyword Arguments](#keyword-arguments)
+        - [Default Arguments](#default-arguments)
+        - [Variable Length Arguments](#variable-length-arguments)
+- [Passing Arrays or List to Functions](#passing-arrays-or-list-to-functions)
+
 
 ## Function Definition
 
@@ -357,7 +382,96 @@ Output: `15`
 In the example above `numbers` is an array which is passed as an argument. The function `add` takes this array and returns the sum of the numbers.
 
 
+## Scope Of Variables
+The scope of a variable is the region where it is defined. There are two types of variables in Python:
+- Global Variables
+- Local Variables
 
+#### Global Variables
+Global variables are the variables which are defined outside a function. They can be accessed from any function.
+
+```python
+x = 10
+
+def add():
+    return x + 5
+
+print(add())
+```
+Output: `15`
+
+In the example above `x` is a global variable which is defined outside the function `add`. The function `add` takes this variable and returns the sum of the variable and `5`.
+
+#### Local Variables
+Local variables are the variables which are defined inside a function. They can only be accessed from the function in which they are defined.
+
+```python
+def add():
+    x = 10
+    return x + 5
+
+print(add())
+```
+Output: `15`
+
+In the example above `x` is a local variable which is defined inside the function `add`. The function `add` takes this variable and returns the sum of the variable and `5`.
+
+## Using MAIN Function
+In simple words, the main function is the entry point of a program. It is the first function which is executed when a program is run. The main function is not defined in Python. We can define a main function and call it explicitly.
+
+```python
+def main():
+    print("Hello World")
+
+if __name__ == "__main__":
+    main()
+```
+Output: `Hello World`
+
+## Recursion
+Recursion is a technique in which a function calls itself. It is used to solve problems which can be broken down into smaller problems of the same type. 
+
+### Simple Example
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+```
+Output: `120`
+
+Note: Lets do a tabular representation of the above code to understand how the recursion works:
+```
+factorial(5) = 5 * factorial(4)
+             = 5 * 4 * factorial(3)
+             = 5 * 4 * 3 * factorial(2)
+             = 5 * 4 * 3 * 2 * factorial(1)
+             = 5 * 4 * 3 * 2 * 1 * factorial(0)
+             = 5 * 4 * 3 * 2 * 1 * 1
+             = 120
+```
+
+### Recursion vs Iteration
+Recursion and iteration are two ways to solve problems. Recursion is a technique in which a function calls itself. Iteration is a technique in which a loop is used to solve problems. Both recursion and iteration have their own advantages and disadvantages.
+
+## Summary
+In this chapter, we learned about functions in Python. The topics covered in this chapter are:
+- Function Definition
+- Built-in Functions
+- Other Functions
+- Modules
+- Math Module
+- Random Module
+- User Defined Functions
+- Different Types of Arguments
+- Passing Arrays or List to Functions
+- Scope of Variables
+- Using MAIN Function
+- Recursion
+- Recursion vs Iteration
 
 
 
