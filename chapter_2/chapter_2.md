@@ -176,6 +176,7 @@ The `random` module contains functions to generate random numbers. Some of the c
 - `random.randint()`: Used to get a random integer number between two numbers.
 - `random.choice()`: Used to get a random element from a list.
 - `random.shuffle()`: Used to shuffle a list.
+- `random.uniform()`: Used to get a random float number between two numbers.
 
 ### Important Examples
 #### Example 1: Random Function
@@ -207,6 +208,158 @@ random.shuffle(numbers)
 print(numbers)
 ```
 Output: `[3, 1, 5, 2, 4]`
+
+#### Example 5: Random Uniform Function
+```python
+import random
+print(random.uniform(1, 10))
+```
+Output: `5.123456789`
+
+## User Defined Functions
+Apart from built-in functions, we can also define our own functions. The syntax for defining a function is as follows:
+
+```python
+def function_name(parameters):
+    # code block
+    return value
+```
+
+Things about the above function:
+- `def`: Keyword used to define a function.
+- `:`: Colon is used to indicate the start of the function block.
+- `function_name`: Name of the function.
+- `parameters`: Arguments passed to the function.
+- `return`: Keyword used to return a value from the function.
+
+**More about return statement:**
+- The `return` statement is used to return a value from the function.
+- If the `return` statement is not used, the function will return `None`.
+- The `return` statement can return multiple values separated by commas.
+
+### Important Examples
+#### Example 1: User Defined Function
+```python
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+```
+Output: `5`
+
+#### Example 2: User Defined Function with Multiple Return Values
+```python
+def add_sub(a, b):
+    return a + b, a - b
+
+add, sub = add_sub(5, 3)
+print(add,',',sub)
+```
+Output: `8,2`
+
+
+### Different Types of Arguments
+There are different types of arguments which can be passed to a function. Some of them are:
+- Positional Arguments
+- Keyword Arguments
+- Default Arguments
+- Variable Length Arguments
+
+#### Positional Arguments
+Positional arguments are the arguments which are passed to a function in the order they are defined. The number of arguments passed should match the number of parameters defined in the function.
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+```
+Output: `5`
+
+In the example above `2` is passed as the first argument and `3` is passed as the second argument. The function `add` takes these arguments and returns the sum of the two numbers. The order of the arguments is important.
+
+#### Keyword Arguments
+Keyword arguments are the arguments which are passed to a function with the parameter name. This way the order of the arguments does not matter.
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(b=2, a=3))
+```
+Output: `5`
+
+In the example above `b=2` is passed as the first argument and `a=3` is passed as the second argument. The function `add` takes these arguments and returns the sum of the two numbers. The order of the arguments does not matter.
+
+#### Default Arguments
+Default arguments are the arguments which have a default value. If the argument is not passed, the default value is used.
+
+```python
+def add(a, b=0):
+    return a + b
+
+print(add(2))
+```
+Output: `2`
+
+In the example above `2` is passed as the first argument and the second argument is not passed. The function `add` takes these arguments and returns the sum of the two numbers. The default value of `b` is `0`.
+We can override the default value by passing a new value.
+
+```python
+def add(a, b=0):
+    return a + b
+
+print(add(2, 3))
+```
+Output: `5`
+
+In the example above `2` is passed as the first argument and `3` is passed as the second argument. The function `add` takes these arguments and returns the sum of the two numbers. The default value of `b` is overridden by passing a new value.
+
+#### Variable Length Arguments
+Variable length arguments are the arguments which can take any number of values. The syntax for variable length arguments is as follows:
+
+```python
+def function_name(*args):
+    # code block
+```
+
+In the syntax above `*args` is used to take any number of arguments. The arguments are stored in a tuple.
+
+```python
+def add(*args):
+    return sum(args)
+
+print(add(1, 2, 3, 4, 5))
+```
+Output: `15`
+
+In the example above `1, 2, 3, 4, 5` are passed as arguments. The function `add` takes these arguments and returns the sum of the numbers. 
+
+## Passing Arrays or List to Functions
+Arrays or lists can be passed to functions in Python. The syntax for passing arrays or lists to functions is as follows:
+
+```python
+def function_name(array):
+    # code block
+```
+
+In the syntax above `array` is the name of the array or list which is passed to the function.
+
+```python
+def add(numbers):
+    return sum(numbers)
+
+numbers = [1, 2, 3, 4, 5]
+print(add(numbers))
+```
+Output: `15`
+
+In the example above `numbers` is an array which is passed as an argument. The function `add` takes this array and returns the sum of the numbers.
+
+
+
+
+
 
 
 
