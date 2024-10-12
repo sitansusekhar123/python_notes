@@ -12,6 +12,9 @@
 8. [Appending Files](#appending-files)
 9. [Binary Files Operations](#binary-files-operations)
 10. [Relative and Absolute Paths](#relative-and-absolute-paths)
+11. [Tell and Seek](#tell-and-seek)
+12. [CSV Files Operations](#csv-files-operations)
+13. [Summary](#summary)
 
 
 ## Data File Operation
