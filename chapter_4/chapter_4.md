@@ -154,3 +154,103 @@ Note: the files are stored as binary files format in the system with an extensio
 - Relative Path: `file.txt`
 - Absolute Path: `C:/Users/John/Desktop/file.txt`
 
+## Tell and Seek
+- `tell()`: Returns the current position of the cursor.
+- `seek()`: Moves the cursor to a specified position.
+
+### Example
+Suppose the text file is like this:
+```
+Hello, World!
+Welcome to Python!
+```
+
+```python
+file = open('file.txt', 'r')
+print(file.tell())
+file.seek(5)
+print(file.tell())
+file.close()
+```
+Output:
+```
+0
+5
+```
+So initially the cursor is at position 0. After `seek(5)`, the cursor moves to position 5.
+If we read the file now, it will start reading from position 5. For the above example, the output will be:
+```python
+file = open('file.txt', 'r')
+data = file.read()
+print(data)
+file.close()
+```
+Output:
+```
+, World!
+Welcome to Python!
+```
+Here the cursor is at position 5, so it starts reading from position 5.
+
+## CSV Files Operations
+- Used to store tabular data.
+- Library used is `csv`.
+
+### Example - Reading CSV File
+Let our CSV file be like this:
+```csv
+Name, Age, City
+John, 22, New York
+Alice, 25, Los Angeles
+```
+
+```python
+import csv
+
+filehanlder = open('data.csv', 'r')
+data = csv.reader(filehanlder)
+
+for row in data:
+    print(row)
+
+filehanlder.close()
+```
+Output:
+```
+['Name', ' Age', ' City']
+['John', ' 22', ' New York']
+['Alice', ' 25', ' Los Angeles']
+```
+Note the output will be in the form of a list. Each row of the list the row in the csv file.
+
+### Example - Writing CSV File
+```python
+import csv
+
+data = [['Name', 'Age', 'City'], ['John', 22, 'New York'], ['Alice', 25, 'Los Angeles']]
+
+filehandler = open('data.csv', 'w', newline='')
+csvwriter = csv.writer(filehandler)
+
+for row in data:
+    csvwriter.writerow(row)
+
+filehandler.close()
+```
+The above code will write the data to the csv file. The csv file will look like:
+```csv
+Name, Age, City
+John, 22, New York
+Alice, 25, Los Angeles
+```
+
+## Summary
+- Open a file using `open()` and close it using `close()`.
+- Different file modes are `r`, `w`, `a`, `r+`, `w+`, `a+`, `b`.
+- Read the file using `read()`, `readline()`, `readlines()`.
+- Write to the file using `write()`, `writelines()`.
+- Use `with` statement to open files.
+- Append data to the file using `a` mode.
+- Use `pickle` to write and read binary files.
+- Use `tell()` and `seek()` to get and set the cursor position.
+- Use `csv` to read and write csv files.
