@@ -1,0 +1,4 @@
+This is the file contents of data_2.txt.
+This is the second line.
+This is the third line.
+This is the fourth line.
